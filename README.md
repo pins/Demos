@@ -12,6 +12,11 @@ To run the demo we need:
 
 The only dependencies required for the server running ONOS and Quagga are `docker`, `docker-compose` and `curl`.
 
+## Topology
+![trellis-topo](pins-trellis.png)
+
+The number of hosts is arbitrary
+
 ## Configuration
 
 ### ONOS Network Configuration
@@ -180,7 +185,7 @@ Here is a template:
   "hosts" : {
     "MAC_ADDRESS_HOST/None": {
       "basic": {
-        "name": "ARBITRATY_NAME",
+        "name": "ARBITRARY_NAME",
         "allowed": true,
         "ips": [
           IP assigned to the HOST
@@ -189,7 +194,7 @@ Here is a template:
         "locations": [
           LOCATION OF THE HOST, in terms of DEVICE_ID/PORT_ID
           For example:
-          "device:leaf1/124"
+          "device:leaf2/3"
         ]
       }
     }
@@ -262,7 +267,7 @@ is in the `config-demo.json` file.
 Now the ONOS UI should show the switches. Now ONOS will automatically detect links
 between devices and start pushing flow entries on the switches.
 Flow entries installed on the switches can be shown on the ONOS CLI by running the 
-`flows` command, or on the GUI by going TODO
+`flows` command, or on the GUI.
 
 ### Let ONOS detect hosts
 You can let ONOS detect new hosts by generating an ARP request via the `arpping` command
@@ -312,7 +317,7 @@ B R  Network            Next Hop        Source (Node)
 ### Communicate with the new subnet
 Now from any hosts in the network we should be able to ping the subnet just of 
 the route pushed via Quagga.
-We can see flow entries poiting towards that networks on the devices via the `flows`
+We can see flow entries pointing towards that networks on the devices via the `flows`
 command in the ONOS CLI or via the ONOS GUI.
 
 ### Logs
