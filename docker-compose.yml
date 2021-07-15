@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  onos:
+    image: onosproject/onos:latest
+    volumes:
+      - ./tmp:/tmp
+    ports:
+      - "8181:8181"
+      - "8101:8101"
+      - "5005:5005"
+      - "830:830"
+      - "2620:2620"
+    environment:
+      - ONOS_APPS=gui2,hostprovider,netcfghostprovider,lldpprovider,fpm,protocols.grpc,protocols.p4runtime
+      - JAVA_DEBUG_PORT=0.0.0.0:5005
+    entrypoint: "./bin/onos-service"
+    command: ["debug"]
+    networks:
+      onos_net:
+        ipv4_address: 172.28.1.1
+  p4runtime-shell:
+    # Needed only for convenience if we need to debug switches
+    image: p4lang/p4runtime-sh:latest
+  quagga:
+    image: opencord/quagga:onos-1.11
+    volumes:
+      - ./quagga_conf:/etc/quagga
+    privileged: true
+    networks:
+      onos_net:
+        ipv4_address: 172.28.1.2
+    entrypoint: "/etc/quagga/entrypoint_quagga.sh"
+
+# We need to explicitly set IP to setup zebra config with IP instead of DNS names
+networks:
+  onos_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16

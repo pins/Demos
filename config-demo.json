@@ -1,0 +1,306 @@
+{
+  "devices": {
+    "device:as7712": {
+      "ports":  {
+        "108": {
+          "enabled": true,
+          "name": "108",
+          "number": 108,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        },
+        "116": {
+          "enabled": true,
+          "name": "116",
+          "number": 116,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        },
+        "124": {
+          "enabled": true,
+          "name": "124",
+          "number": 124,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        }
+      },
+      "basic": {
+        "managementAddress": "grpc://10.70.2.2:9559?device_id=183807201",
+        "manufacturer": "Edgecore",
+        "hwVersion":"AS7712",
+        "driver": "sonic",
+        "pipeconf": "org.onosproject.pipelines.sai",
+        "locType": "grid",
+        "gridX": 200,
+        "gridY": 600
+      },
+      "segmentrouting": {
+        "name": "as7712",
+        "ipv4NodeSid": 200,
+        "ipv4Loopback": "192.168.0.200",
+        "ipv6NodeSid": 201,
+        "ipv6Loopback": "2000::c0a8:0200",
+        "routerMac": "8c:ea:1b:17:64:0c",
+        "isEdgeRouter": true,
+        "adjacencySids": []
+      }
+    },
+    "device:wedge": {
+      "ports":  {
+        "108": {
+          "enabled": true,
+          "name": "108",
+          "number": 108,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        },
+        "116": {
+          "enabled": true,
+          "name": "116",
+          "number": 116,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        },
+        "124": {
+          "enabled": true,
+          "name": "124",
+          "number": 124,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        }
+      },
+      "basic": {
+        "managementAddress": "grpc://10.70.2.1:9559?device_id=183807201",
+        "manufacturer": "Edgecore",
+        "hwVersion":"Wedge100BF-32X",
+        "driver": "sonic",
+        "pipeconf": "org.onosproject.pipelines.sai",
+        "locType": "grid",
+        "gridX": 800,
+        "gridY": 600
+      },
+      "segmentrouting": {
+        "name": "wedge",
+        "ipv4NodeSid": 100,
+        "ipv4Loopback": "192.168.0.100",
+        "ipv6NodeSid": 101,
+        "ipv6Loopback": "2000::c0a8:0100",
+        "routerMac": "00:90:fb:64:cc:9e",
+        "isEdgeRouter": true,
+        "adjacencySids": []
+      }
+    },
+    "device:arista1": {
+      "ports":  {
+        "228": {
+          "enabled": true,
+          "name": "228",
+          "number": 228,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        },
+        "244": {
+          "enabled": true,
+          "name": "244",
+          "number": 244,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        }
+      },
+      "basic": {
+        "managementAddress": "grpc://10.70.2.3:9559?device_id=183807201",
+        "manufacturer": "Arista",
+        "hwVersion":"7060DX4-C32",
+        "driver": "sonic",
+        "pipeconf": "org.onosproject.pipelines.sai",
+        "locType": "grid",
+        "gridX": 400,
+        "gridY": 400
+      },
+      "segmentrouting": {
+        "name": "arista1",
+        "ipv4NodeSid": 110,
+        "ipv4Loopback": "192.168.0.110",
+        "ipv6NodeSid": 111,
+        "ipv6Loopback": "2000::c0a8:0110",
+        "routerMac": "fc:bd:67:2b:4b:08",
+        "isEdgeRouter": false,
+        "adjacencySids": []
+      }
+    },
+    "device:arista2": {
+      "ports":  {
+        "228": {
+          "enabled": true,
+          "name": "228",
+          "number": 228,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        },
+        "244": {
+          "enabled": true,
+          "name": "244",
+          "number": 244,
+          "removed": false,
+          "speed": 100000,
+          "type": "copper"
+        }
+      },
+      "basic": {
+        "managementAddress": "grpc://10.70.2.4:9559?device_id=183807201",
+        "manufacturer": "Arista",
+        "hwVersion":"7060DX4-C32",
+        "driver": "sonic",
+        "pipeconf": "org.onosproject.pipelines.sai",
+        "locType": "grid",
+        "gridX": 600,
+        "gridY": 400
+      },
+      "segmentrouting": {
+        "name": "arista2",
+        "ipv4NodeSid": 210,
+        "ipv4Loopback": "192.168.0.210",
+        "ipv6NodeSid": 211,
+        "ipv6Loopback": "2000::c0a8:0210",
+        "routerMac": "fc:bd:67:2b:c8:f8",
+        "isEdgeRouter": false,
+        "adjacencySids": []
+      }
+    }
+  },
+  "ports": {
+    "device:as7712/124": {
+      "interfaces": [
+        {
+          "name": "server-as",
+          "ips": [
+            "172.16.101.254/24",
+            "172.16.102.254/24",
+            "172.16.103.254/24",
+            "172.16.104.254/24",
+            "172.16.105.254/24"
+          ],
+          "vlan-untagged": 10
+        }
+      ]
+    },
+    "device:wedge/124": {
+      "interfaces": [
+        {
+          "name": "server-wedge",
+          "ips": [
+            "172.16.111.254/24",
+            "172.16.112.254/24",
+            "172.16.113.254/24",
+            "172.16.114.254/24",
+            "172.16.115.254/24"
+          ],
+          "vlan-untagged": 20
+        }
+      ]
+    }
+  },
+  "hosts" : {
+    "0a:6e:1d:97:a9:df/None": {
+      "basic": {
+        "name": "bf1",
+        "allowed": true,
+        "gridX": 900,
+        "gridY": 700,
+        "locType": "grid",
+        "uiType": "router",
+        "ips": [
+          "172.16.111.1"
+        ],
+        "locations": [
+          "device:wedge/124"
+        ]
+      }
+    },
+    "7e:5b:ab:0a:91:a8/None": {
+      "basic": {
+        "name": "bf2",
+        "allowed": true,
+        "gridX": 800,
+        "gridY": 700,
+        "locType": "grid",
+        "ips": [
+          "172.16.112.1"
+        ],
+        "locations": [
+          "device:wedge/124"
+        ]
+      }
+    },
+    "fa:a4:89:e8:04:4c/None": {
+      "basic": {
+        "name": "bf3",
+        "allowed": true,
+        "gridX": 700,
+        "gridY": 700,
+        "locType": "grid",
+        "ips": [
+          "172.16.113.1"
+        ],
+        "locations": [
+          "device:wedge/124"
+        ]
+      }
+    },
+
+    "a6:64:f8:59:6a:b4/None": {
+      "basic": {
+        "name": "as1",
+        "allowed": true,
+        "locType": "grid",
+        "gridX": 300,
+        "gridY": 700,
+        "ips": [
+          "172.16.101.1"
+        ],
+        "locations": [
+          "device:as7712/124"
+        ]
+      }
+    },
+    "0e:14:f4:c8:bc:3d/None": {
+      "basic": {
+        "name": "as2",
+        "allowed": true,
+        "locType": "grid",
+        "gridX": 200,
+        "gridY": 700,
+        "ips": [
+          "172.16.102.1"
+        ],
+        "locations": [
+          "device:as7712/124"
+        ]
+      }
+    },
+    "2e:cf:64:a3:89:86/None": {
+      "basic": {
+        "name": "as3",
+        "allowed": true,
+        "locType": "grid",
+        "gridX": 100,
+        "gridY": 700,
+        "ips": [
+          "172.16.103.1"
+        ],
+        "locations": [
+          "device:as7712/124"
+        ]
+      }
+    }
+  }
+}
